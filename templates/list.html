@@ -1,0 +1,22 @@
+{% block content %}
+
+<table>
+    <tr>
+        <td>объявление</td>
+        <td>текст</td>
+        <td>цена</td>
+        <td>дата объявления</td>
+    </tr>
+    {% for ads in ads %}
+<tr>
+    <td><a href={{ ads.id }}>{{ ads.title }}</a></td>
+    <td>{{ ads.description|truncatechars:20 }}</td>
+    <td>{{ ads.price }}</td>
+    <td>{{ ads.created_at }}</td>
+</tr>
+    {% endfor %}
+</table>
+<a href="create/">Создать новое объявление</a>
+
+
+{% endblock content %}
