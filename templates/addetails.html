@@ -1,40 +1,40 @@
 {% block content %}
 
-<!--<table>-->
-<!--    <tr>-->
-<!--        <td>объявление</td>-->
-<!--        <td>текст</td>-->
-<!--        <td>цена</td>-->
-<!--        <td>дата объявления</td>-->
-<!--    </tr>-->
-<!-- {% if fullad %}-->
-<!--    <tr>-->
-<!--        <td>{{ fullad.title }}</td>-->
-<!--        <td>{{ fullad.description }}</td>-->
-<!--        <td>{{ fullad.price }}</td>-->
-<!--        <td>{{ fullad.created_at }}</td>-->
-<!--    </tr>-->
-<!--</table>-->
-
+{% if fullad %}
 объявление
+<br>
 <br>
 {{ fullad.title }}
 <br>
+<br>
 текст
+<br>
+<br>
+категория
+<br>
+<br>
+{{ fullad.categories }}
+<br>
 <br>
 {{ fullad.description }}
 <br>
+<br>
 цена
+<br>
 <br>
 {{ fullad.price }}
 <br>
+<br>
 дата объявления
+<br>
 <br>
 {{ fullad.created_at }}
 <br>
-<a href='{% url "update" fullad.pk %}'>Edit</a>
-<a href='{% url "delete" fullad.pk %}'>Delete</a>
 <br>
-<a href="/">Назад к списку</a>
+<button><a href='{% url "update" fullad.pk %}'>Edit</a></button>
+<button><a href='{% url "delete" fullad.pk %}'>Delete</a></button>
+<br>
+<br>
+<button><a href="/">Назад к списку</a></button>
 {% endif %}
 {% endblock content %}

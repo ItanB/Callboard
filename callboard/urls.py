@@ -22,10 +22,10 @@ from board.views import AdList, AdDetail, CreateAd, AdUpdate, AdDelete
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
-    path('', AdList.as_view(), name='list'),
+    path('board', AdList.as_view(), name='list'),
     path('<int:pk>', AdDetail.as_view(), name='fullad'),
     path('create/', CreateAd.as_view(), name='create'),
     path('<int:pk>/update/', AdUpdate.as_view(), name='update'),
-path('<int:pk>/delete/', AdDelete.as_view(), name='delete'),
+    path('<int:pk>/delete/', AdDelete.as_view(), name='delete'),
 
 ]

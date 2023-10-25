@@ -1,5 +1,5 @@
 from django import forms
-from board.models import Ad
+from .models import Ad
 
 
 class AdForm(forms.ModelForm):
@@ -7,12 +7,8 @@ class AdForm(forms.ModelForm):
         model = Ad
         fields = [
             'title',
+            'categories',
             'description',
             'price',
-            # 'categories',
             'created_at',
         ]
-
-
-class NewAd(forms.ModelForm):
-    pass
