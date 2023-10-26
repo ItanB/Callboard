@@ -1,7 +1,5 @@
 from django.contrib import admin
-from .models import BoardUser, Ad, Category, AdCategory
+from .models import Ad, Reply
 
-admin.site.register(BoardUser)
 admin.site.register(Ad)
-admin.site.register(Category)
-admin.site.register(AdCategory)
+admin.site.register(Reply)

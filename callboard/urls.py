@@ -17,15 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from board.views import AdList, AdDetail, CreateAd, AdUpdate, AdDelete
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pages/', include('django.contrib.flatpages.urls')),
-    path('board', AdList.as_view(), name='list'),
-    path('<int:pk>', AdDetail.as_view(), name='fullad'),
-    path('create/', CreateAd.as_view(), name='create'),
-    path('<int:pk>/update/', AdUpdate.as_view(), name='update'),
-    path('<int:pk>/delete/', AdDelete.as_view(), name='delete'),
-
+    path('', include('board.urls')),
+    path('', include('sign.urls')),
 ]

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weekly announcement</title>
+</head>
+<body>
+    <h2>Jбъявления за последнюю неделю:</h2>
+    <ul>
+        {% for ads in ads %}
+            <li><a href="{{ link }}{{ ads.get_absolute_url }}">{{ ads.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -7,6 +7,12 @@
 {{ fullad.title }}
 <br>
 <br>
+автор
+<br>
+<br>
+{{ fullad.author }}
+<br>
+<br>
 текст
 <br>
 <br>
@@ -25,6 +31,11 @@
 {{ fullad.price }}
 <br>
 <br>
+{% if fullad.file%}
+<img src="{{ fullad.file.url }}" width="100px">
+{% endif %}
+<br>
+<br>
 дата объявления
 <br>
 <br>
@@ -35,6 +46,20 @@
 <button><a href='{% url "delete" fullad.pk %}'>Delete</a></button>
 <br>
 <br>
-<button><a href="/">Назад к списку</a></button>
+<button><a href="/board">Назад к списку</a></button>
 {% endif %}
+<br>
+<br>
+{% if reply in replies %}
+    <table>
+        <td>{{ reply.author }}</td>
+        <td>{{ reply.data }}</td>
+        <td>{{ reply.reply_text }}</td>
+    </table>
+{% endif %}
+<hr>
+<button><a href="reply/create/">Создать отклик</a></button>
+
+<button><a href="'board/<int:pk>/update/">Редактировать</a></button>
+
 {% endblock content %}

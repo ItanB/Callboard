@@ -1,0 +1,26 @@
+{% block title %}
+Ads
+{% endblock title %}
+
+{% block content %}
+    <h1> Поиск объявлений : {{ search|length }} </h1>
+    <hr>
+    <form action="" method="get">
+        {{ filterset.form.as_p }}
+        <input type="submit" value="Найти" />
+    </form>
+    {% for ads in search%}
+    <div>
+        {{ads.author.user__username}}
+        <br>
+        {{ads.data|date:'d.m.Y'}}
+        <br>
+        <a href="{% url 'fullad' fullad.id %}">{{ fullad.title }}</a>
+        <br>
+        {{fullad.description|truncatechars:50}}
+        <br>
+        {{fullad.get_news_display}}
+    </div>
+    {%endfor%}
+
+{% endblock content %}

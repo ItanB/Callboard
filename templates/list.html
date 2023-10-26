@@ -3,6 +3,7 @@
 <table>
     <tr>
         <td>объявление</td>
+        <td>автор</td>
         <td>категория</td>
         <td>текст</td>
         <td>цена</td>
@@ -11,6 +12,7 @@
     {% for ads in ads %}
 <tr>
     <td><a href={{ ads.id }}>{{ ads.title }}</a></td>
+    <td>{{ ads.author }}</td>
     <td>{{ ads.categories }}</td>
     <td>{{ ads.description|truncatechars:20 }}</td>
     <td>{{ ads.price }}</td>

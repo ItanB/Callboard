@@ -1,0 +1,14 @@
+{% block title %}
+author
+{% endblock title %}
+
+{% block content %}
+<h1>Страница Автора: {{ ads.author.username }}</h1>
+{% if post %}
+        <h2>{{ ads.title }}</h2>
+        <br>
+        {{ ads.description }}
+        <button><a class="text-center" href="/{{ads.id}}">читать</a> </button>
+        <br>
+{% endif %}
+{% endblock content %}
